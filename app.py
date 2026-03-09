@@ -23,7 +23,7 @@ print("Loading DeepFace model... This may take a few seconds.")
 MODEL_NAME = "Facenet"   # lighter than ArcFace
 DETECTOR = "opencv"      # lighter detector
 
-model = DeepFace.build_model(MODEL_NAME)
+_ = DeepFace.build_model(MODEL_NAME)
 
 print("DeepFace model loaded successfully")
 
@@ -66,7 +66,6 @@ def compare_faces():
             img2_path=path2,
             model_name=MODEL_NAME,
             detector_backend=DETECTOR,
-            model=model,
             enforce_detection=False
         )
 
@@ -114,7 +113,6 @@ def compare_faces_binary():
             img2_path=path2,
             model_name=MODEL_NAME,
             detector_backend=DETECTOR,
-            model=model,
             enforce_detection=False
         )
 
